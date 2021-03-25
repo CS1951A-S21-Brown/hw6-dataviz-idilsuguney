@@ -22,7 +22,6 @@ let countRef = svg.append("g");
  * instances
  */
 function cleanData(data, comparator, numExamples) {
-    // TODO: sort and return the given data with the comparator (extracting the desired number of examples)
     return data.sort(comparator).slice(0, numExamples);
 }
 
@@ -74,12 +73,6 @@ d3.csv("../data/netflix.csv").then(function (data) {
         .domain(data.map(function (d) { return d["listed_in"] }))
         .range(d3.quantize(d3.interpolateHcl("#ff0000", "#ffa500"), NUM_GENRES));
 
-    /*
-    This next line does the following:
-        1. Select all desired elements in the DOM
-        2. Count and parse the data values
-        3. Create new, data-bound elements for each data value
-    */
     let bars = svg.selectAll("rect").data(results);
 
     bars.enter()
@@ -190,7 +183,7 @@ d3.csv("../data/netflix.csv").then(function (data) {
 
 // create a scale for the x axis
     let x = d3.scaleLinear()
-        .domain([d3.min(results_2, function(d) { return d.year }), d3.max(results_2, function(d) { return d.yar; })])
+        .domain([d3.min(results_2, function(d) { return d.year }), d3.max(results_2, function(d) { return d.year; })])
         .range([0, graph_2_width - margin.left - margin.right]);
 
     // create a scale for the y axis (avg duration)
