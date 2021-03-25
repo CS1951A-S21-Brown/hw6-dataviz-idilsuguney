@@ -7,6 +7,25 @@
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <style type="text/css">
+            /* Custom style rules go here. We've included a few, but feel free to write your own! */
+            button:focus {
+                outline: 0 !important;
+            }
+            svg {
+                display: block;
+                margin: 0 auto;
+                font: 10px sans-serif;
+            }
+            .tooltip {
+                position: absolute;
+                font-size: 12px;
+                min-width: 100px;
+                padding: 10px;
+                width:  auto;
+                height: auto;
+            }
+        </style>
     </head>
 <body>
     <div class="header">
@@ -23,6 +42,12 @@
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
-    <script type="text/javascript" src="main.js"></script>
-</body>
+    <script type="text/javascript">
+        // define the number of unique movies based on the Netflix data
+        const NUM_UNIQUE_ENTRIES = 6234;
+        const NUM_GENRES = 42;
+        const NUM_RELEASE_YEARS = 70;
+    </script>
+    <script type="text/javascript" src="main.js">
+    </script>
 </html>
