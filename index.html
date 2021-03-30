@@ -34,11 +34,72 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
-            <div id="graph1"></div>
+            <div id="graph1">
+                <button onclick="changeColorOne('green')">Make the graph green</button>
+                <button onclick="changeColorOne('pink')">Make the graph pink</button>
+            </div>
             <div id="graph2"></div><br/>
         </div>
         <div class="col-lg-6">
-            <div id="graph3"></div>
+            <div id="graph3">
+                <button onclick="changeColorThree('yellow')">Make the graph yellow</button>
+                <button onclick="changeColorThree('orange')">Make the graph orange</button>
+            </div>
+        </div>
+    </div>
+    <div class= "written questions">
+        <div id="header" style = "margin-left: 1.5%; margin-right: 1.5%; margin-bottom: 1.5%;">
+            <h3>Assignment 6 Written Questions</h3>
+        </div>
+        <div id= "text" style = "margin-left: 1.5%; margin-right: 1.5%; margin-bottom: 1.5%;">
+            <br> 1. Regarding the first question about the Netflix data, my dashboard shows the number of titles per genre using a 
+            horizontal bar graph. It's possible to see all genres included in the original dataframe on the y-axis of the bar graph,
+            and the number of titles associated with that genre on the x-axis of the bar graph. Additionally, the original data 
+            classified a single title as a number of different genres. I considered each genre a title was associated 
+            with, and incremented each genre by 1 after splitting the "listed_in" column and identifying each included genre. 
+            In order to answer the second question, I created a line graph with release year on the x-axis and the average runtime
+            on the y-axis. I did this through first eliminating all the TV-Shows from the data and grouping all remaining movies 
+            according to the year they were released. I then summed up all durations of movies released in a specific year, and 
+            divided the sum by the number of titles released in that specific year to obtain the average. Lastly, to answer
+            the third question, I created a bar chart showing each director-actor pair on the y-axis and the number of movies 
+            a specific pair was included in on the x-axis. I achieved this by first identifying each director-actor movie per movie
+            for all movies and storing their count in a dictionary. As a result, I believe my dashboard does an effective job 
+            of showing and visualizing the requested data. <br> 
+            <br> 2. The first reason d3 was helpful and improved my visualization is that it was very easy to quickly see my graphs on
+            the web using my browser and also print out some parts of my code using the console. Thus, d3 allowed me to see 
+            the end products of my code on my browser by allowing for live updates, which was extremely helpful, both for visualizing
+            and debugging. Another reason d3 was helpful is because of its flexibility. D3 works very well with a number of existing 
+            web technologies, including but not limited to HTML, SVG, and CSS. It also works with the built-in technologies from browsers
+            to allow for mouse interaction. Therefore, d3 is very user-friendly and isn't limited to only a few web technology stacks. 
+            Finally, d3 can be used to create a variety of graphs that can be coded to look anything like the developer wants. Even 
+            though I only created 2 different types of graphs (bar and line graph), d3 can be used to create much more advanced 
+            and complicated graphs with extra features, such as filters, toggles, and tooltips. Through its extensive offerings 
+            and its allowence for creativity, d3 stands out among other similar libraries.  <br> 
+            <br> 3. One downside of using d3 is that d3 doesn't support some older versions of browsers, such as Internet Explorer 8.
+            Therefore, when trying to load and see the data, some users may experience difficulty as d3 won't be compatible with 
+            the browsers they're using. Additionally, d3 can be very time consuming to use when compared with other data visualization
+            libraries, such as matplotlib in Python. Because matplotlib has several functions that are very easy to learn and use, 
+            d3 can be inefficient to use in some cases, even though it can create much more detailed and advanced graphs. Finally, d3 
+            may not be the best library to use when working with large quantities of data, since SVG has some limitations to its 
+            performance when dealing with larger datasets. <br> 
+            <br> 4. My dashboard may not be accessible to users with visual impairments. More importantly, for people with blindness,
+            none of the information presented in my graphs is accessible. Therefore, it's important to use assistive 
+            technology to make dashboards more accessible to people with this condition. We can add a text description for each 
+            graph included in the dashboard, which concisely but comprehensively explains the information the graph aims to 
+            visualize. Then, using a screen reader, everyone can have an understanding of the visualized data. Additionally, 
+            we should be careful with using the colors red and green in a single graph to represent different categories as this 
+            can cause people with color blindness to struggle. After reading the article, “Why Accessibility Is at the Heart of 
+            Data Visualization,” and its section on color-blindess, I realized that I was using both colors in my dashboard when 
+            visualizing my data, which helped me become more aware about this issue. Last but not least, we should also be careful
+            about using some animations that include a sudden change in colors and shapes, as this can trigger epilepsy, ADHD, or
+            other cognitive abilities. For example, while including a button on dashboards to change colors of graphs is fine, designing 
+            a graph that automatically changes colors can be too risky. <br> 
+            <br> 5. When designing my dashboard, I could include sound descriptions for each graph that would convey a brief summary  
+            about the data the graphs are aiming to describe for people with visual impairments. I think two factors that caused me to 
+            neglect including sound on my dashboard was my lack of awareness and the technical difficulties regarding accomplishing 
+            this. After learning about how my dashboard can be inaccesible to some people, I became more aware of this issue and will 
+            make sure to do more research on how to use the d3 library to include sound buttons on dashboards.  
+            <br>
         </div>
     </div>
     <!--Feel free to add more JavaScript files as needed-->
@@ -47,6 +108,7 @@
         const NUM_UNIQUE_ENTRIES = 6234;
         const NUM_GENRES = 42;
         const NUM_RELEASE_YEARS = 70;
+        const COMBO_NUMS = 35
     </script>
     <script type="text/javascript" src="main.js">
     </script>
